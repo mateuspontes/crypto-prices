@@ -14,9 +14,17 @@
   "bin": {
     "crypto-prices": "bin/main.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateuspontes/crypto-prices.git"
+  },
   "keywords": ["crypto", "coins", "marketcap", "price"],
   "author": "Mateus Pontes <mateuspo10@gmail.com> (https://mateuspontes.com/)",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mateuspontes/crypto-prices/issues"
+  },
+  "homepage": "https://github.com/mateuspontes/crypto-prices#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.3.2",
