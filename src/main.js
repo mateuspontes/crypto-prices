@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const program = require('commander');
-const cryptoPrices = require("./cryptoPrices");
+const cryptoPrices = require('./cryptoPrices');
 
 program
   .description('Get crypto prices to any currency defined.')

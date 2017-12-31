@@ -1,14 +1,14 @@
-const chalk = require("chalk");
-const request = require("request");
-const ora = require("ora");
+const chalk = require('chalk');
+const request = require('request');
+const ora = require('ora');
 
 const spinner = ora({
-  text: "Retrieving Crypto prices...",
-  color: "yellow"
+  text: 'Retrieving Crypto prices...',
+  color: 'yellow',
 });
 
 function cryptoPrices(currency = null, limit = 30) {
-  let url = `https://api.coinmarketcap.com/v1/ticker`;
+  let url = 'https://api.coinmarketcap.com/v1/ticker';
   if (currency) {
     url += `/${currency}`;
   }
@@ -23,22 +23,20 @@ function cryptoPrices(currency = null, limit = 30) {
     try {
       apiResponse = JSON.parse(body);
     } catch (parseError) {
-      console.log(
-        chalk.red("Something went wrong in the API. Try in a few minutes.")
-      );
+      console.log(chalk.red('Something went wrong in the API. Try in a few minutes.'));
       return parseError;
     }
 
-    apiResponse.forEach(crypto => {
-      percent_1h = crypto.percent_change_1h;
-      percent_24h = crypto.percent_change_24h;
-      percent_7d = crypto.percent_change_7d;
+    apiResponse.forEach((crypto) => {
+      const percent1h = crypto.percent_change_1h;
+      const percent24h = crypto.percent_change_24h;
+      const percent7d = crypto.percent_change_7d;
 
-      console.log(` * ${chalk.cyan(crypto.name)} ${crypto.name.length <= 10 ? ` \t` : ``} \t \
-${chalk.yellow("$ " + crypto.price_usd)} \
-\t ${chalk.gray("|")} \t  1h: ${percent_1h >= 0 ? chalk.green(percent_1h + "%") : chalk.red(percent_1h + "%")} \
-\t ${chalk.gray("|")} \t 24h: ${percent_24h >= 0 ? chalk.green(percent_24h + "%") : chalk.red(percent_24h + "%")} \
-\t ${chalk.gray("|")} \t  7d: ${percent_7d >= 0 ? chalk.green(percent_7d + "%") : chalk.red(percent_7d + "%")} \
+      console.log(` * ${chalk.cyan(crypto.name)} ${crypto.name.length <= 10 ? ' \t' : ' '} \t \
+${chalk.yellow(`$ ${crypto.price_usd}`)} \
+\t ${chalk.gray('|')} \t  1h: ${percent1h >= 0 ? chalk.green(`${percent1h}%`) : chalk.red(`${percent1h}%`)} \
+\t ${chalk.gray('|')} \t 24h: ${percent24h >= 0 ? chalk.green(`${percent24h}%`) : chalk.red(`${percent24h}%`)} \
+\t ${chalk.gray('|')} \t  7d: ${percent7d >= 0 ? chalk.green(`${percent7d}%`) : chalk.red(`${percent7d}%`)} \
 `);
     });
   });

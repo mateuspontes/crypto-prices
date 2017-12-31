@@ -1,6 +1,6 @@
 {
   "name": "crypto-prices",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Get price of the most popular crypto coins on CoinMarketCap",
   "main": "main.js",
   "scripts": {
