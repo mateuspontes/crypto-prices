@@ -2,7 +2,7 @@
   "name": "crypto-prices",
   "version": "1.0.0",
   "description": "Get price of 10 most popular crypto coins on CoinMarketCap",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "clear": "rimraf bin",
     "build": "npm run clear && ./node_modules/.bin/babel --out-dir bin src",
