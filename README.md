@@ -5,13 +5,13 @@
 ### Installing
 
 ```
-$ npm install -g crypto-coins
+$ npm install -g crypto-prices
 ```
 
 ### How to use
 
 ```sh
-$ crypto-coins --help
+$ crypto-prices --help
 
   Usage: crypto-prices [options]
 
@@ -27,13 +27,13 @@ $ crypto-coins --help
 Listing 30 most popular coins
 
 ```sh
-$ crypto-coins
+$ crypto-prices
 ```
 
 Fetching bitcoin price
 
 ```sh
-$ crypto-coins -c bitcoin
+$ crypto-prices -c bitcoin
  * Bitcoin  	 	 $ 14117.3 	 | 	  1h: -0.9% 	 | 	 24h: 10.4% 	 | 	  7d: 5.72%
 ```
 
