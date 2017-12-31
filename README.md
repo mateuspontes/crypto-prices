@@ -2,6 +2,8 @@
 
 > Get price of the most popular crypto coins on CoinMarketCap
 
+![Example](images/crypto-prices-preview.png)
+
 ### Installing
 
 ```
